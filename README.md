@@ -1,17 +1,10 @@
-# Collection Style Game
 ### Project Expectations
 - Include a falling object sprite that falls from random positions during the game. 
 - Include a catcher sprite that moves left and right when the arrow keys are pressed. 
 - Detect collision when the falling object collides with the catcher.
 - Include a score variable.
 - Increase the score when the falling object collides with the catcher.
-- Optional:
-  - Include three images: one in the background, one for your catcher sprite, and one for your falling object sprite.
-  - Include citations for your images in your project’s README file. 
 
-### Optional
-- Adding a home screen (See HQ for details)
-- Adding another level (See HQ for details)
 
 ###  Attributions
 images designed from Canva
