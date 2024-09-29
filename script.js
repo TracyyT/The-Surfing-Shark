@@ -41,7 +41,7 @@ function setup() {
   directionBoard.h = 350;
   directionBoard.collider = 'k';
   directionBoard.color = 'lightblue';
-  directionBoard.text = "DIRECTIONS\n\nAvoid all the obstacles\nby moving the shark horizontally.\n\nPoints will be calculated by\nthe number of seconds you survive.\n\n\n";
+  directionBoard.text = "DIRECTIONS\n\nMove the shark to avoid obstacles.\n\nTime will be recorded as you survive.\n\n\n";
 
   // Create exit button after losing
   exitButton = new Sprite(width/2, -350);
@@ -95,11 +95,22 @@ function draw() {
     showScreen1();
       screen = 1;
   }
-    if (screen == 1){
-      if (exitButton.mouse.presses()){
-        showScreen4();
-          screen = 4;
-      }
+  if (screen == 1){
+    if (exitButton.mouse.presses()){
+      showScreen4();
+        screen = 0;
+    }
+    if (startButton.mouse.presses()){
+      //shark.pos = {x:207, y:448};
+      screen = 2;
+    }
+    shark.pos = {x:-207, y:-448};
+    shark.moveTowards(mouse.x, -448, 1);
+    if (shark.x < 30) {
+      shark.x = 30;
+    } else if (shark.x > 385) {
+      shark.x = 385;
+    }
     }  
 
   //Player click play
@@ -115,7 +126,7 @@ function draw() {
       shark.x = 385;
     }
   }
-  if (screen == 2){
+  else if (screen == 2){
     showScreen2();
     shark.moveTowards(mouse.x, 448, 1);
     //shark.pos = {x:207, y:448};
@@ -170,6 +181,7 @@ function draw() {
       showScreen4();
     }
   }
+
 }
 
 //Functions
